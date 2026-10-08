@@ -1,0 +1,736 @@
+/* ===== 全局背景与主题色 ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  color: #0f172a;
+}
+
+/* ===== 全局背景：铺满整个视口，固定不动 ===== */
+.app-bg-1 {
+  position: relative;
+  background-color: transparent !important;
+}
+.app-bg-1::before {
+  content: '';
+  position: fixed;
+  top: 64px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/5-1.系统首页.jpeg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none;
+  z-index: 0;
+}
+.app-bg-2 {
+  position: relative;
+  background-color: transparent !important;
+}
+.app-bg-2::before {
+  content: '';
+  position: fixed;
+  top: 64px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/5-2.气象数据管理主页面.jpeg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none;
+  z-index: 0;
+}、
+.app-bg-3 {
+  position: relative;
+  background-color: transparent !important;
+}
+.app-bg-3::before {
+  content: '';
+  position: fixed;
+  top: 64px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/5-3.区块链存证.jpeg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== 页眉：白色底 + 高度固定 ===== */
+.ant-layout-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 0 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px !important;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== 网页大标题：图片只紧贴标题文字 ===== */
+.header-title {
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/images/1.网页大标题.jpeg') center/cover no-repeat !important;
+  color: #ffffff !important;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 0 40px 0 28px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-radius: 0 !important;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.95),
+    0 0 12px rgba(0,0,0,0.7);
+  
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.header-title .anticon {
+  font-size: 26px !important;
+  margin-right: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+}
+
+/* ===== 横排菜单：恢复原先图片背景，并叠加“按键变淡”蒙版 ===== */
+.ant-menu-horizontal {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/images/3.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  border-radius: 0 30px 30px 0 !important;
+  padding: 0 20px !important;
+  margin: 0 !important;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 横排按键之外的区域：从按键处往右渐变为透明，让底下的图片“复原” */
+.ant-menu-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.95) 58%,
+    rgba(255,255,255,0.4) 82%,
+    rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+/* ===== 横排属性按键：位于蒙版之上，正常显示背景图 ===== */
+.ant-menu-horizontal > li.ant-menu-item {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  text-shadow:
+    0 2px 5px rgba(0,0,0,0.95),
+    0 0 10px rgba(0,0,0,0.7);
+  border-radius: 0 !important;
+  margin: 0 18px !important;
+  padding: 0 32px !important;
+  height: 64px !important;
+  line-height: 64px !important;
+  border: none !important;
+  border-left: 1px solid rgba(255,255,255,0.4) !important;
+  border-right: 1px solid rgba(255,255,255,0.4) !important;
+  transition: all 0.3s ease;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.ant-menu-horizontal > li.ant-menu-item .anticon {
+  font-size: 18px !important;
+  margin-right: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+}
+
+.ant-menu-horizontal > li.ant-menu-item:nth-of-type(1) {
+  background-image: url('/images/3-1.png') !important;
+}
+.ant-menu-horizontal > li.ant-menu-item:nth-of-type(2) {
+  background-image: url('/images/3-2.png') !important;
+}
+.ant-menu-horizontal > li.ant-menu-item:nth-of-type(3) {
+  background-image: url('/images/3-3.png') !important;
+}
+.ant-menu-horizontal > li.ant-menu-item:nth-of-type(4) {
+  background-image: url('/images/3-4.png') !important;
+}
+.ant-menu-horizontal > li.ant-menu-item:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.5);
+}
+.ant-menu-horizontal > li.ant-menu-item-selected {
+  color: #22c55e !important;
+  font-weight: 900 !important;
+  border: 2px solid #000000 !important;
+  box-shadow:
+    inset 0 0 0 100px rgba(0, 0, 0, 0.45),
+    0 0 14px 4px rgba(0, 0, 0, 0.85),
+    0 0 28px 8px rgba(0, 0, 0, 0.45) !important;
+  text-shadow:
+    0 0 8px rgba(34, 197, 94, 1),
+    0 2px 6px rgba(0, 0, 0, 0.95) !important;
+}
+.ant-menu-horizontal > li.ant-menu-item-selected .anticon {
+  color: #22c55e !important;
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.9)) !important;
+}
+
+/* ===== 竖排栏：恢复原先图片背景，并叠加“按键变淡”蒙版 ===== */
+.ant-layout-sider {
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/images/4.竖排栏.png') center/cover no-repeat !important;
+  border-right: 1px solid #e2e8f0 !important;
+  position: fixed !important;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+  z-index: 999;
+}
+.ant-layout-sider .ant-menu-inline {
+  background: transparent !important;
+  padding-top: 12px !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* 竖排按键之外的区域：从按键处往下渐变为透明，让底下的图片“复原” */
+.ant-layout-sider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.95) 58%,
+    rgba(255,255,255,0.4) 85%,
+    rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== 竖排属性按键：位于蒙版之上，正常显示背景图 ===== */
+.ant-menu-inline > li.ant-menu-item {
+  color: #ffffff !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  text-shadow:
+    0 2px 5px rgba(0,0,0,0.95),
+    0 0 10px rgba(0,0,0,0.7);
+  margin: 22px 0 !important;
+  padding-left: 24px !important;
+  height: 72px !important;
+  line-height: 72px !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-top: 1px solid rgba(255,255,255,0.4) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+  transition: all 0.3s ease;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.ant-menu-inline > li.ant-menu-item .anticon {
+  font-size: 19px !important;
+  margin-right: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+}
+.ant-menu-inline > li.ant-menu-item:nth-of-type(1) {
+  background-image: url('/images/4-1.系统首页.png') !important;
+}
+.ant-menu-inline > li.ant-menu-item:nth-of-type(2) {
+  background-image: url('/images/4-2.数据管理.png') !important;
+}
+.ant-menu-inline > li.ant-menu-item:nth-of-type(3) {
+  background-image: url('/images/4-3.区块链存证.png') !important;
+}
+.ant-menu-inline > li.ant-menu-item:hover {
+  filter: brightness(1.15);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.5);
+}
+.ant-menu-inline > li.ant-menu-item-selected {
+  color: #22c55e !important;
+  font-weight: 900 !important;
+  border: 2px solid #000000 !important;
+  box-shadow:
+    inset 0 0 0 100px rgba(0, 0, 0, 0.45),
+    0 0 14px 4px rgba(0, 0, 0, 0.85),
+    0 0 28px 8px rgba(0, 0, 0, 0.45) !important;
+  text-shadow:
+    0 0 8px rgba(34, 197, 94, 1),
+    0 2px 6px rgba(0, 0, 0, 0.95) !important;
+}
+.ant-menu-inline > li.ant-menu-item-selected .anticon {
+  color: #22c55e !important;
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.9)) !important;
+}
+
+/* ===== 主内容区：透明，让全局背景透出来 ===== */
+.content-bg-1,
+.content-bg-2,
+.content-bg-3 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 20px;
+  margin-top: 16px !important;
+  min-height: calc(100vh - 64px - 24px - 24px - 24px) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== 数据大屏：4个统计卡片 ===== */
+.dash-stats .ant-col:nth-child(1) .ant-card {
+  background: url('/images/8-1.数据块1.jpeg') center/cover no-repeat !important;
+  position: relative;
+}
+.dash-stats .ant-col:nth-child(2) .ant-card {
+  background: url('/images/8-2.数据块2.jpeg') center/cover no-repeat !important;
+  position: relative;
+}
+.dash-stats .ant-col:nth-child(3) .ant-card {
+  background: url('/images/8-3.数据块3.jpeg') center/cover no-repeat !important;
+  position: relative;
+}
+.dash-stats .ant-col:nth-child(4) .ant-card {
+  background: url('/images/8-4.数据块4.png') center/cover no-repeat !important;
+  position: relative;
+}
+.dash-stats .ant-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.60);
+  pointer-events: none;
+  border-radius: 12px;
+}
+.dash-stats .ant-card > * { position: relative; z-index: 1; }
+.dash-stats .ant-card { text-align: center; }
+.dash-stats .ant-statistic { text-align: center; }
+.dash-stats .ant-statistic-title { text-align: center; }
+.dash-stats .ant-statistic-content { text-align: center; justify-content: center; }
+
+.dash-stats .ant-statistic-title {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.9) !important;
+  margin-bottom: 8px !important;
+}
+.dash-stats .ant-statistic-content {
+  font-weight: 900 !important;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.9) !important;
+}
+.dash-stats .ant-statistic-content-value {
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  color: #16a34a !important;
+}
+.dash-stats .ant-statistic-content-suffix {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #16a34a !important;
+}
+.dash-stats .ant-statistic-content-prefix .anticon {
+  font-size: 28px !important;
+  color: #16a34a !important;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.8));
+}
+
+/* ===== 罗盘卡片背景 ===== */
+.dash-compass {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(187, 247, 208, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(134, 239, 172, 0.4) 0%, transparent 50%),
+    linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%) !important;
+  position: relative;
+  border: 2px solid rgba(34, 197, 94, 0.3) !important;
+}
+.dash-compass::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(34, 197, 94, 0.04) 20px, rgba(34, 197, 94, 0.04) 40px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.dash-compass > * { position: relative; z-index: 1; }
+
+/* ===== 统计图卡片背景 ===== */
+.dash-chart {
+  background:
+    radial-gradient(ellipse at top, rgba(165, 243, 252, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #ecfeff 0%, #cffafe 50%, #a5f3fc 100%) !important;
+  position: relative;
+  border: 2px solid rgba(6, 182, 212, 0.3) !important;
+}
+.dash-chart::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(6, 182, 212, 0.05) 40px, rgba(6, 182, 212, 0.05) 42px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.dash-chart > * { position: relative; z-index: 1; }
+
+/* ===== 区块链存证查询卡片背景 ===== */
+.dash-query {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 50%, #fef3c7 100%) !important;
+  position: relative;
+  border: 2px solid rgba(234, 179, 8, 0.3) !important;
+}
+.dash-query::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(234, 179, 8, 0.04) 30px, rgba(234, 179, 8, 0.04) 31px),
+    repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(234, 179, 8, 0.04) 30px, rgba(234, 179, 8, 0.04) 31px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.dash-query > * { position: relative; z-index: 1; }
+
+/* ===== 最近上链足迹卡片背景 ===== */
+.dash-timeline {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(254, 215, 170, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(253, 186, 116, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%) !important;
+  position: relative;
+  border: 2px solid rgba(217, 119, 6, 0.3) !important;
+}
+.dash-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle, rgba(217, 119, 6, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.dash-timeline > * { position: relative; z-index: 1; }
+
+/* ===== 7个表格背景 ===== */
+.table-farmer {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+  position: relative;
+  border: 2px solid rgba(34, 197, 94, 0.3) !important;
+}
+.table-farmer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(34, 197, 94, 0.03) 25px, rgba(34, 197, 94, 0.03) 50px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-farmer > * { position: relative; z-index: 1; }
+
+.table-expert {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+  position: relative;
+  border: 2px solid rgba(16, 185, 129, 0.3) !important;
+}
+.table-expert::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 25px, rgba(16, 185, 129, 0.03) 25px, rgba(16, 185, 129, 0.03) 50px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-expert > * { position: relative; z-index: 1; }
+
+.table-admin {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
+  position: relative;
+  border: 2px solid rgba(20, 184, 166, 0.3) !important;
+}
+.table-admin::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, rgba(20, 184, 166, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-admin > * { position: relative; z-index: 1; }
+
+.table-metdata {
+  background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%) !important;
+  position: relative;
+  border: 2px solid rgba(6, 182, 212, 0.3) !important;
+}
+.table-metdata::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(6, 182, 212, 0.04) 20px, rgba(6, 182, 212, 0.04) 21px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-metdata > * { position: relative; z-index: 1; }
+
+.table-solarterm {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+  position: relative;
+  border: 2px solid rgba(234, 179, 8, 0.3) !important;
+}
+.table-solarterm::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, rgba(234, 179, 8, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-solarterm > * { position: relative; z-index: 1; }
+
+.table-chain {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  position: relative;
+  border: 2px solid rgba(59, 130, 246, 0.3) !important;
+}
+.table-chain::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(59, 130, 246, 0.04) 30px, rgba(59, 130, 246, 0.04) 31px);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-chain > * { position: relative; z-index: 1; }
+
+.table-synctools {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%) !important;
+  position: relative;
+  border-radius: 16px;
+  padding: 4px;
+  border: 2px solid rgba(34, 197, 94, 0.3) !important;
+}
+.table-synctools::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(187, 247, 208, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(134, 239, 172, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.table-synctools > * { position: relative; z-index: 1; }
+
+/* ===== 删除弹窗背景（配合 Modal.confirm 使用） ===== */
+.ant-modal-content {
+  background: url('/images/9.删除跳窗.jpeg') center/cover no-repeat !important;
+  border-radius: 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+.ant-modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.95);
+  pointer-events: none;
+}
+.ant-modal-content > * { position: relative; z-index: 1; }
+.ant-modal-confirm-title {
+  color: #166534 !important;
+  font-weight: 700;
+}
+
+/* ===== 删除弹窗：按钮适配绿色主题 ===== */
+.custom-delete-modal .ant-modal-confirm-title {
+  color: #166534 !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+.custom-delete-modal .ant-modal-confirm-body > .anticon {
+  color: #22c55e !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns {
+  margin-top: 24px !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns .ant-btn {
+  border-radius: 20px !important;
+  font-weight: 600 !important;
+  padding: 6px 24px !important;
+  height: 38px !important;
+  font-size: 14px !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns .ant-btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3) !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns .ant-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5) !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns .ant-btn-default {
+  border: 1px solid #22c55e !important;
+  color: #16a34a !important;
+  background: #ffffff !important;
+}
+.custom-delete-modal .ant-modal-confirm-btns .ant-btn-default:hover {
+  border-color: #16a34a !important;
+  color: #15803d !important;
+  background: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* ===== 表格美化 ===== */
+.ant-table {
+  background: transparent !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #dcfce7, #f0fdf4) !important;
+  color: #166534 !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #22c55e !important;
+  padding: 14px 16px !important;
+  font-size: 14px;
+}
+.ant-table-tbody > tr > td {
+  color: #1e293b !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  background: rgba(255,255,255,0.75) !important;
+}
+.ant-table-tbody > tr:nth-child(even) > td {
+  background: rgba(248, 250, 252, 0.75) !important;
+}
+.ant-table-tbody > tr:hover > td {
+  background: rgba(220, 252, 231, 0.85) !important;
+}
+
+/* ===== 统计数字样式 ===== */
+.ant-statistic-title {
+  color: #475569 !important;
+}
+.ant-statistic-content-value {
+  color: #16a34a !important;
+  font-weight: 700;
+}
+
+/* ===== 卡片通用样式 ===== */
+.ant-card {
+  border-radius: 16px !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+  position: relative;
+}
+.ant-card-head {
+  border-bottom: 1px solid rgba(34, 197, 94, 0.2) !important;
+  background: rgba(240, 253, 244, 0.85) !important;
+}
+.ant-card-head-title {
+  color: #166534 !important;
+  font-weight: 700;
+}
+
+/* ===== 按钮统一样式 ===== */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+.ant-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+/* ===== 消除标题外层 div 的右边距，让标题背景图和横排菜单无缝拼接 ===== */
+.ant-layout-header > div:first-child {
+  margin-right: 0 !important;
+}
+
+/* ===== 在标题右侧与菜单左侧之间，加一层淡入淡出的过渡层 ===== */
+.ant-layout-header > div:first-child {
+  position: relative;
+}
+.ant-layout-header > div:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.05) 40%,
+    rgba(255,255,255,0.1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== 自定义滚动条：与农业绿色主题一致 ===== */
+.app-bg-1::-webkit-scrollbar,
+.app-bg-2::-webkit-scrollbar,
+.app-bg-3::-webkit-scrollbar {
+  width: 10px;
+}
+.app-bg-1::-webkit-scrollbar-track,
+.app-bg-2::-webkit-scrollbar-track,
+.app-bg-3::-webkit-scrollbar-track {
+  background: rgba(232, 245, 233, 0.8);
+  border-radius: 5px;
+}
+.app-bg-1::-webkit-scrollbar-thumb,
+.app-bg-2::-webkit-scrollbar-thumb,
+.app-bg-3::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 5px;
+  border: 2px solid rgba(232, 245, 233, 0.9);
+}
+.app-bg-1::-webkit-scrollbar-thumb:hover,
+.app-bg-2::-webkit-scrollbar-thumb:hover,
+.app-bg-3::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+
+
+
+
